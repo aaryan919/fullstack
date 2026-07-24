@@ -1,3 +1,95 @@
+/*
+  TEMPLATE STYLES: These styles are used as a base template.
+  AI is allowed to modify these styles as needed.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: "Inter", sans-serif;
+    overflow-x: clip;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+}
+
+.font-display {
+    font-family: "Fraunces", serif;
+}
+
+.grain-overlay {
+    background-image: radial-gradient(hsl(var(--forest) / 0.04) 1px, transparent 1px);
+    background-size: 4px 4px;
+}
+
+/*
+  ---break---
+*/
+
+@layer base {
+    :root {
+        --background: 44 44% 95%;
+        --foreground: 140 25% 12%;
+        --card: 42 40% 97%;
+        --card-foreground: 140 25% 12%;
+        --popover: 42 40% 97%;
+        --popover-foreground: 140 25% 12%;
+        --primary: 145 38% 18%;
+        --primary-foreground: 44 44% 96%;
+        --secondary: 80 18% 82%;
+        --secondary-foreground: 145 38% 18%;
+        --muted: 60 18% 88%;
+        --muted-foreground: 140 12% 38%;
+        --accent: 82 22% 72%;
+        --accent-foreground: 145 38% 18%;
+        --destructive: 8 62% 44%;
+        --destructive-foreground: 44 44% 96%;
+        --border: 80 14% 80%;
+        --input: 80 14% 80%;
+        --ring: 145 38% 18%;
+        --radius: 0.4rem;
+        --forest: 145 38% 18%;
+        --olive: 78 26% 42%;
+        --cream: 44 44% 95%;
+        --sidebar-background: 0 0% 98%;
+        --sidebar-foreground: 240 5.3% 26.1%;
+        --sidebar-primary: 240 5.9% 10%;
+        --sidebar-primary-foreground: 0 0% 98%;
+        --sidebar-accent: 240 4.8% 95.9%;
+        --sidebar-accent-foreground: 240 5.9% 10%;
+        --sidebar-border: 220 13% 91%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+
+    .dark {
+        --background: 240 10% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 240 10% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 10% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 5.9% 10%;
+        --secondary: 240 3.7% 15.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 3.7% 15.9%;
+        --muted-foreground: 240 5% 64.9%;
+        --accent: 240 3.7% 15.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 3.7% 15.9%;
+        --input: 240 3.7% 15.9%;
+        --ring: 240 4.9% 83.9%;
+        --sidebar-background: 240 5.9% 10%;
+        --sidebar-foreground: 240 4.8% 95.9%;
+        --sidebar-primary: 224.3 76.3% 48%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 240 3.7% 15.9%;
+        --sidebar-accent-foreground: 240 4.8% 95.9%;
+        --sidebar-border: 240 3.7% 15.9%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+}
