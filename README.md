@@ -62,19 +62,7 @@ RAZORPAY_KEY_ID=your_key
 RAZORPAY_KEY_SECRET=your_secret
 ```
 
-**Frontend (`apps/web/.env`):**
-```env
-VITE_API_URL=http://localhost:5000/api
-```
 
-**Root Docker Configuration (`.env`):**
-```env
-POSTGRES_USER=verdant
-POSTGRES_PASSWORD=changeme
-POSTGRES_DB=verdant
-PGADMIN_DEFAULT_EMAIL=admin@local.dev
-PGADMIN_DEFAULT_PASSWORD=admin
-```
 
 ### 2. Infrastructure Setup (Docker)
 
