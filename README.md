@@ -1,4 +1,4 @@
-# Project Verdant / VPN Management System
+# Project DBMS ON TOP / VPN Management System
 
 A comprehensive, full-stack VPN management and provisioning system built with a React frontend, Node.js/Express API, and automated VLESS/Reality protocol provisioning via 3x-ui panels.
 
