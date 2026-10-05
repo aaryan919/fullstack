@@ -1,0 +1,43 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: verdant_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-verdant}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-verdant}
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: verdant_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@local.dev}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+
+  # Runs a real 3x-ui panel locally so you can test VLESS provisioning
+  # end-to-end without touching your production VPS.
+  threexui:
+    image: ghcr.io/mhsanaei/3x-ui:latest
+    container_name: verdant_3xui
+    restart: unless-stopped
+    ports:
+      - "2053:2053"   # panel web UI
+      - "8444:443"    # xray inbound (VLESS+REALITY) - mapped to 8444 to avoid Windows port 443 conflicts
+    volumes:
+      - threexui_db:/etc/x-ui
+      - threexui_cert:/root/cert
+
+volumes:
+  pgdata:
+  threexui_db:
+  threexui_cert:
